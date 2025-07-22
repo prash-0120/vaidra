@@ -1,0 +1,146 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.hero {
+  background-image: url('https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 15px;
+  animation: logoFade 1s ease-in-out;
+}
+
+@keyframes logoFade {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.fade-in {
+  animation: fadeIn 0.9s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+main {
+  max-width: 600px;
+  margin: 30px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form input, form button, textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+form button, .comment-section button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+form button:hover, .comment-section button:hover {
+  background-color: #2980b9;
+  transform: scale(1.03);
+}
+
+#result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.indicator.green {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.indicator.yellow {
+  background-color: #fff8e1;
+  color: #ff8f00;
+  font-weight: bold;
+}
+
+.indicator.red {
+  background-color: #ffebee;
+  color: #c62828;
+  font-weight: bold;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+#commentList {
+  list-style: none;
+  padding: 0;
+}
+
+#commentList li {
+  background: #f9f9f9;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: white;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}

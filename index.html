@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaidra | PricePilot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <div class="overlay">
+        <img src="logo.png" alt="Vaidra Logo" class="logo" />
+        <h1>🏠 Vaidra PricePilot</h1>
+        <p>AI-Powered Property Estimator</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="form-section fade-in">
+      <h2>Check Your Property's Worth Instantly</h2>
+      <form id="priceForm">
+        <input type="text" placeholder="Enter City / Area" required />
+        <input type="text" placeholder="Property Type (e.g. 2BHK)" required />
+        <input type="text" placeholder="Size in sq.ft (e.g. 1200)" required />
+        <input type="text" placeholder="Your Expected Price (e.g. 75 lakh)" required />
+        <input type="number" placeholder="Property Age (in years)" required />
+        <button type="submit">Estimate Now</button>
+      </form>
+      <div id="result" class="hidden"></div>
+    </section>
+
+    <section class="comment-section fade-in">
+      <h3>💬 Your Feedback</h3>
+      <textarea id="commentBox" placeholder="Leave your feedback here..."></textarea>
+      <button onclick="submitComment()">Submit Comment</button>
+      <ul id="commentList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Vaidra Technologies. All rights reserved.</p>
+    <p>
+      📧 <a href="mailto:support@vaidra.in">support@vaidra.in</a> |
+      📱 <a href="https://instagram.com/vaidra_official" target="_blank">@vaidra_official</a>
+    </p>
+    <p>
+      🔒 Estimated data is AI-generated. Please verify before making decisions.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
