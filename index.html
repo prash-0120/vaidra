@@ -3,56 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vaidra | PricePilot</title>
+  <title>Vaidra Project</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="hero">
-      <div class="overlay">
-        <img src="logo.png" alt="Vaidra Logo" class="logo" />
-        <h1>🏠 Vaidra PricePilot</h1>
-        <p>AI-Powered Property Estimator</p>
+  <!-- ✅ Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-logo">Vaidra</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#emi">EMI Calculator</a>
+        <a href="#trend">Price Trend</a>
+        <a href="#facility">Nearby</a>
+        <a href="#about">About</a>
       </div>
+    </div>
+  </nav>
+
+  <!-- ✅ Hero Section -->
+  <header id="home" class="hero">
+    <div class="overlay">
+      <img src="logo.png" class="logo" alt="Vaidra Logo" />
+      <h1>Vaidra Project</h1>
+      <p>AI-Powered Real Estate Toolkit</p>
     </div>
   </header>
 
   <main>
-    <section class="form-section fade-in">
-      <h2>Check Your Property's Worth Instantly</h2>
+    <!-- 🏠 Property Estimator -->
+    <section id="estimator">
+      <h2>Property Price Estimator</h2>
       <form id="priceForm">
-        <input type="text" placeholder="Enter City / Area" required />
-        <input type="text" placeholder="Property Type (e.g. 2BHK)" required />
-        <input type="text" placeholder="Size in sq.ft (e.g. 1200)" required />
-        <input type="text" placeholder="Your Expected Price (e.g. 75 lakh)" required />
-        <input type="number" placeholder="Property Age (in years)" required />
-        <button type="submit">Estimate Now</button>
+        <input type="text" id="city" placeholder="City (e.g. Mumbai)" required />
+        <input type="number" id="size" placeholder="Size in sq.ft" required />
+        <input type="number" id="age" placeholder="Property Age (Years)" required />
+        <input type="number" id="userPrice" placeholder="Your Asking Price" required />
+        <button type="submit">Estimate</button>
       </form>
-
-      <div id="loader" class="hidden">⏳ Estimating price...</div>
       <div id="result" class="hidden"></div>
     </section>
 
-    <section class="comment-section fade-in">
-      <h3>💬 Your Feedback</h3>
-      <textarea id="commentBox" placeholder="Leave your feedback here..."></textarea>
-      <button onclick="submitComment()">Submit Comment</button>
-      <ul id="commentList"></ul>
+    <!-- 💰 EMI Calculator -->
+    <section id="emi">
+      <h2>EMI Calculator</h2>
+      <form id="emiForm">
+        <input type="number" id="loan" placeholder="Loan Amount" required />
+        <input type="number" id="rate" placeholder="Interest Rate (%)" required />
+        <input type="number" id="years" placeholder="Loan Tenure (Years)" required />
+        <button type="submit">Calculate EMI</button>
+      </form>
+      <div id="emiResult" class="hidden"></div>
+    </section>
+
+    <!-- 📊 Dropdown-Based Price Trend -->
+    <section id="trend">
+      <h2>Average Price Trend (Last 5 Years)</h2>
+      <label for="cityTrendSelect">Choose a city:</label>
+      <select id="cityTrendSelect">
+        <option disabled selected>Select City</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Pune">Pune</option>
+        <option value="Hyderabad">Hyderabad</option>
+      </select>
+      <canvas id="trendChart" style="margin-top: 20px;"></canvas>
+    </section>
+
+    <!-- 🗺️ Nearby Facilities -->
+    <section id="facility">
+      <h2>Nearby Facilities</h2>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13212.324847510038!2d78.9629!3d20.5937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd6dd3f0e9a3f8b%3A0x1!2sIndia!5e0!3m2!1sen!2sin!4v1689812340000!5m2!1sen!2sin"
+        width="100%" height="350" style="border:0; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <p style="font-size: 0.9rem; color: #666;">Explore schools, hospitals, markets and more by zooming in on your area.</p>
+    </section>
+
+    <!-- ℹ️ About -->
+    <section id="about">
+      <h2>About Vaidra Project</h2>
+      <p><strong>Vaidra Project</strong> is a free AI-powered platform designed to help users estimate property prices, check EMI, track price trends, and find local facilities easily.</p>
+      <p>Founded by <strong>Pravin Kamble</strong>, Vaidra Project is committed to making real estate tools available to everyone in India.</p>
+      <p>Contact us: <a href=\"mailto:vaidraOnline@gmail.com\">vaidraOnline@gmail.com</a></p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Vaidra Technologies. All rights reserved.</p>
-    <p>
-      🔹 Founder of Vaidra: <strong>Pravin Kamble</strong><br>
-      📧 <a href="mailto:vaidraOnline@gmail.com">vaidraOnline@gmail.com</a><br>
-      📱 <a href="https://instagram.com/vaidra_official" target="_blank">@vaidra_official</a>
-    </p>
-    <p style="margin-top: 10px; font-size: 0.9rem; color: #aaa;">
-      🔒 Estimated data is AI-generated. Please verify before making decisions.
-    </p>
+    <p>&copy; 2025 Vaidra Project | Founder: Pravin Kamble</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
