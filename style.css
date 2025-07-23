@@ -1,146 +1,130 @@
+/* style.css */
+
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  background-color: #f0f2f5;
+  padding: 0;
+  background: #f5f7fa;
   color: #333;
 }
 
-.hero {
-  background-image: url('https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=1470&q=80');
-  background-size: cover;
-  background-position: center;
-  height: 300px;
+.main-nav {
+  background-color: #101820;
+  color: white;
+  padding: 1rem 2rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.55);
-  padding: 40px;
-  border-radius: 10px;
+.nav-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  background: linear-gradient(to right, #1f4037, #99f2c8);
+  padding: 3rem 1rem;
   text-align: center;
-  color: #fff;
+  color: white;
+  position: relative;
 }
 
-.logo {
-  width: 100px;
-  height: auto;
-  margin-bottom: 15px;
-  animation: logoFade 1s ease-in-out;
+.hero img.logo {
+  width: 80px;
+  animation: pulse 2s infinite;
 }
 
-@keyframes logoFade {
-  from { opacity: 0; transform: scale(0.8); }
-  to   { opacity: 1; transform: scale(1); }
+.hero h1 {
+  font-size: 3rem;
+  margin: 1rem 0 0.5rem;
 }
 
-.fade-in {
-  animation: fadeIn 0.9s ease-in forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+.hero p {
+  font-size: 1.2rem;
 }
 
 main {
-  max-width: 600px;
-  margin: 30px auto;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
   background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
 }
 
-h2, h3 {
-  text-align: center;
-  margin-bottom: 20px;
+h2 {
+  color: #101820;
+  margin-bottom: 1rem;
 }
 
-form input, form button, textarea {
-  width: 100%;
-  padding: 14px;
-  margin: 8px 0;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+input, select, button {
+  padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 1rem;
 }
 
-form button, .comment-section button {
-  background-color: #3498db;
+button {
+  background-color: #101820;
   color: white;
-  border: none;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s;
+  transition: background 0.3s ease;
 }
 
-form button:hover, .comment-section button:hover {
-  background-color: #2980b9;
-  transform: scale(1.03);
-}
-
-#result {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  text-align: center;
-}
-
-.indicator.green {
-  background-color: #e8f5e9;
-  color: #2e7d32;
-  font-weight: bold;
-}
-
-.indicator.yellow {
-  background-color: #fff8e1;
-  color: #ff8f00;
-  font-weight: bold;
-}
-
-.indicator.red {
-  background-color: #ffebee;
-  color: #c62828;
-  font-weight: bold;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-
-#commentList {
-  list-style: none;
-  padding: 0;
-}
-
-#commentList li {
-  background: #f9f9f9;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 6px;
-  font-size: 0.95rem;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #2c3e50;
-  color: white;
-  margin-top: 40px;
-}
-
-footer a {
-  color: #ffd700;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
+button:hover {
+  background-color: #333;
 }
 
 .hidden {
   display: none;
+}
+
+#result, #emiResult {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f0f8ff;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  background: #101820;
+  color: white;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
